@@ -12,7 +12,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { BriefcaseIcon, UserIcon, LogOutIcon, MenuIcon, XIcon } from "lucide-react";
+import { BriefcaseIcon, User, LogOut, MenuIcon, XIcon } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -40,7 +40,7 @@ export default function Navbar() {
 
   const getNavLinks = () => {
     const links = [...navLinks];
-    
+
     if (session?.user) {
       if (session.user.role === "employer") {
         links.push(...employerLinks);
@@ -48,8 +48,19 @@ export default function Navbar() {
         links.push(...jobSeekerLinks);
       }
     }
-    
+
     return links;
+  };
+
+  const handleLogout = async () => {
+    try {
+      await fetch("/api/auth/signout", {
+        method: "POST",
+      });
+      await signOut({ callbackUrl: "/" });
+    } catch (error) {
+      console.error("Error logging out:", error);
+    }
   };
 
   return (
@@ -68,11 +79,10 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium transition-colors ${
-                  isActive(link.href)
-                    ? "text-primary"
-                    : "text-gray-700 hover:text-primary"
-                }`}
+                className={`text-sm font-medium transition-colors ${isActive(link.href)
+                  ? "text-primary"
+                  : "text-gray-700 hover:text-primary"
+                  }`}
               >
                 {link.label}
               </Link>
@@ -82,10 +92,11 @@ export default function Navbar() {
           {/* Auth Buttons or User Menu */}
           <div className="hidden md:flex items-center space-x-4">
             {status === "authenticated" ? (
-              <DropdownMenu>
+              <DropdownMenu >
                 <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" className="relative h-8 w-8 rounded-full">
-                    <UserIcon className="h-4 w-4" />
+                  <Button className="relative ">
+                    <span className="p-4">LogOut</span>
+                    <User className="h-4 w-4" />
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end">
@@ -105,8 +116,8 @@ export default function Navbar() {
                     <Link href="/profile">Profile</Link>
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
-                  <DropdownMenuItem onClick={() => signOut({ callbackUrl: "/" })}>
-                    <LogOutIcon className="mr-2 h-4 w-4" />
+                  <DropdownMenuItem onClick={handleLogout}>
+                    <LogOut className="mr-2 h-4 w-4 " />
                     <span>Log out</span>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
@@ -156,11 +167,10 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`block py-2 px-3 rounded-md text-base font-medium ${
-                    isActive(link.href)
-                      ? "bg-primary/10 text-primary"
-                      : "text-gray-700 hover:bg-gray-50 hover:text-primary"
-                  }`}
+                  className={`block py-2 px-3 rounded-md text-base font-medium ${isActive(link.href)
+                    ? "bg-primary/10 text-primary"
+                    : "text-gray-700 hover:bg-gray-50 hover:text-primary"
+                    }`}
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {link.label}
@@ -193,7 +203,7 @@ export default function Navbar() {
                       <button
                         onClick={() => {
                           setMobileMenuOpen(false);
-                          signOut({ callbackUrl: "/" });
+                          handleLogout();
                         }}
                         className="block w-full text-left py-2 px-3 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary"
                       >
