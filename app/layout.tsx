@@ -11,6 +11,9 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'JobHub - Find Your Next Career Opportunity',
   description: 'JobHub connects talented professionals with innovative companies',
+  icons: {
+    icon: '/favicon.ico', // Assuming a favicon might be added later
+  },
 };
 
 export default function RootLayout({
