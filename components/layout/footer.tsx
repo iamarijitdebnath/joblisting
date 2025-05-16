@@ -15,30 +15,30 @@ export default function Footer() {
               Connecting talented professionals with innovative companies.
             </p>
           </div>
-          
+
           <div className="col-span-1">
             <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wider">
               For Job Seekers
             </h3>
             <ul className="mt-4 space-y-2">
               <li>
-                <Link href="/jobs" className="text-sm text-gray-600 hover:text-gray-900">
+                <Link href="#" className="text-sm text-gray-600 hover:text-gray-900">
                   Browse Jobs
                 </Link>
               </li>
               <li>
-                <Link href="/companies" className="text-sm text-gray-600 hover:text-gray-900">
+                <Link href="#" className="text-sm text-gray-600 hover:text-gray-900">
                   Companies
                 </Link>
               </li>
               <li>
-                <Link href="/resources" className="text-sm text-gray-600 hover:text-gray-900">
+                <Link href="#" className="text-sm text-gray-600 hover:text-gray-900">
                   Career Resources
                 </Link>
               </li>
             </ul>
           </div>
-          
+
           <div className="col-span-1">
             <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wider">
               For Employers
@@ -50,47 +50,47 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/pricing" className="text-sm text-gray-600 hover:text-gray-900">
+                <Link href="#" className="text-sm text-gray-600 hover:text-gray-900">
                   Pricing
                 </Link>
               </li>
               <li>
-                <Link href="/resources/employers" className="text-sm text-gray-600 hover:text-gray-900">
+                <Link href="#" className="text-sm text-gray-600 hover:text-gray-900">
                   Hiring Resources
                 </Link>
               </li>
             </ul>
           </div>
-          
+
           <div className="col-span-1">
             <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wider">
               Company
             </h3>
             <ul className="mt-4 space-y-2">
               <li>
-                <Link href="/about" className="text-sm text-gray-600 hover:text-gray-900">
+                <Link href="#" className="text-sm text-gray-600 hover:text-gray-900">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-sm text-gray-600 hover:text-gray-900">
+                <Link href="#" className="text-sm text-gray-600 hover:text-gray-900">
                   Contact
                 </Link>
               </li>
               <li>
-                <Link href="/privacy" className="text-sm text-gray-600 hover:text-gray-900">
+                <Link href="#" className="text-sm text-gray-600 hover:text-gray-900">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="/terms" className="text-sm text-gray-600 hover:text-gray-900">
+                <Link href="#" className="text-sm text-gray-600 hover:text-gray-900">
                   Terms of Service
                 </Link>
               </li>
             </ul>
           </div>
         </div>
-        
+
         <div className="mt-12 pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-gray-500">
             &copy; {new Date().getFullYear()} JobHub. All rights reserved.
