@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useSearchParams } from "next/navigation";
 import { IJob } from "@/lib/db/models/Job";
 import Link from "next/link";
@@ -36,12 +36,12 @@ export default function JobsList() {
   const [currentPage, setCurrentPage] = useState(1);
   const [sortOption, setSortOption] = useState("-createdAt");
 
-  const buildQueryString = () => {
+  const buildQueryString = useCallback(() => {
     const params = new URLSearchParams(searchParams);
     params.set("page", currentPage.toString());
     params.set("sort", sortOption);
     return params.toString();
-  };
+  }, [searchParams, currentPage, sortOption]);
 
   useEffect(() => {
     const fetchJobs = async () => {

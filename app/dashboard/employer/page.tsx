@@ -146,7 +146,7 @@ export default function EmployerDashboard() {
                         <div className="space-y-6">
                             {jobs.map((job) => (
                                 <div
-                                    key={job._id}
+                                    key={String(job._id)}
                                     className="flex flex-col md:flex-row justify-between items-start gap-4 p-4 border rounded-lg"
                                 >
                                     <div className="space-y-2">
