@@ -155,7 +155,7 @@ export default function Home() {
                 </div>
               </div>
               <p className="text-gray-600">
-                "I found my dream job at a tech startup through JobHub within just two weeks of signing up. The platform was intuitive and the job matching was spot on!"
+                &quot;I found my dream job at a tech startup through JobHub within just two weeks of signing up. The platform was intuitive and the job matching was spot on!&quot;
               </p>
             </div>
             
@@ -168,7 +168,7 @@ export default function Home() {
                 </div>
               </div>
               <p className="text-gray-600">
-                "After struggling with other job platforms, JobHub connected me with quality opportunities that actually matched my experience and career goals."
+                &quot;After struggling with other job platforms, JobHub connected me with quality opportunities that actually matched my experience and career goals.&quot;
               </p>
             </div>
             
@@ -181,7 +181,7 @@ export default function Home() {
                 </div>
               </div>
               <p className="text-gray-600">
-                "As an employer, JobHub has transformed our hiring process. We've found exceptional talent and reduced our time-to-hire by 40%."
+                &quot;As an employer, JobHub has transformed our hiring process. We&apos;ve found exceptional talent and reduced our time-to-hire by 40%.&quot;
               </p>
             </div>
           </div>
@@ -193,7 +193,7 @@ export default function Home() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Take the Next Step?</h2>
           <p className="text-blue-100 max-w-2xl mx-auto mb-8">
-            Whether you're looking for your next career move or searching for talent, 
+            Whether you&apos;re looking for your next career move or searching for talent, 
             JobHub is here to help you succeed.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -61,7 +61,7 @@ export default function JobsList() {
     };
 
     fetchJobs();
-  }, [searchParams, currentPage, sortOption]);
+  }, [searchParams, currentPage, sortOption, buildQueryString]);
 
   const handlePageChange = (page: number) => {
     if (page >= 1 && page <= totalPages) {
